@@ -4,6 +4,8 @@
 
 """二叉树的创建与遍历"""
 
+from collections import deque
+
 
 class BiTreeNode(object):
     def __init__(self, data):
@@ -15,9 +17,40 @@ class BiTreeNode(object):
 def pre_order(root):
     """前序遍历"""
     if root:
-        print(root.data, end=',')
-        pre_order(root.lchild)
-        pre_order(root.rchild)
+        print(root.data, end=',')  # 先访问根节点
+        pre_order(root.lchild)  # 再递归左子树
+        pre_order(root.rchild)  # 最后递归右子树
+
+
+def in_order(root):
+    """中序遍历"""
+    if root:
+        in_order(root.lchild)  # 先递归左子树
+        print(root.data, end=',')  # 再访问根节点
+        in_order(root.rchild)  # 最后递归右子树
+
+
+def post_order(root):
+    """后序遍历"""
+    if root:
+        post_order(root.lchild)  # 先递归左子树
+        post_order(root.rchild)  # 再递归右子树
+        print(root.data, end=',')  # 最后访问根节点
+
+
+def level_order(root):
+    """层次遍历"""
+    queue = deque()
+    queue.append(root)  # 先让root进队
+    while len(queue) > 0:  # 只要队不空
+        node = queue.popleft()  # 出队
+        print(node.data, end=',')
+
+        # 检查是否有左右孩子，有则进队
+        if node.lchild:
+            queue.append(node.lchild)
+        if node.rchild:
+            queue.append(node.rchild)
 
 
 if __name__ == '__main__':
@@ -42,4 +75,7 @@ if __name__ == '__main__':
     # print(root.lchild.rchild.data)
 
     # 遍历二叉树
-    pre_order(root=root)
+    # pre_order(root=root)  # 前序遍历
+    # in_order(root=root)  # 中序遍历
+    # post_order(root=root)  # 后序遍历
+    level_order(root=root)  # 层次遍历
