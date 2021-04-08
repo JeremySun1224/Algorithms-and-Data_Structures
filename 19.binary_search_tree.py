@@ -67,6 +67,27 @@ class BST(object):
             else:
                 return
 
+    def query_recurrent(self, node, val):
+        if not node:
+            return None
+        if node.data < val:
+            return self.query_recurrent(node.rchild, val)
+        elif node.data > val:
+            return self.query_recurrent(node.lchild, val)
+        else:
+            return None
+
+    def query_non_recurrent(self, val):
+        p = self.root
+        while p:
+            if p.data < val:
+                p = p.rchild
+            elif p.data > val:
+                p = p.lchild
+            else:
+                return p
+        return None
+
     def pre_order(self, root):
         """前序遍历"""
         if root:
@@ -90,12 +111,16 @@ class BST(object):
 
 
 if __name__ == '__main__':
-    li = list(range(100))
+    li = list(range(0, 500, 2))
     random.shuffle(li)
 
     tree = BST(li=li)
-    tree.pre_order(tree.root)
-    print('')
-    tree.in_order(tree.root)
-    print('')
-    tree.post_order(tree.root)
+    # 插入
+    # tree.pre_order(tree.root)
+    # print('')
+    # tree.in_order(tree.root)
+    # print('')
+    # tree.post_order(tree.root)
+
+    # 查询
+    print(tree.query_non_recurrent(val=3))
