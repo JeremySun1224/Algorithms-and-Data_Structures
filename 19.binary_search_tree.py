@@ -68,6 +68,7 @@ class BST(object):
                 return
 
     def query_recurrent(self, node, val):
+        """递归查询"""
         if not node:
             return None
         if node.data < val:
@@ -78,6 +79,7 @@ class BST(object):
             return None
 
     def query_non_recurrent(self, val):
+        """非递归查询"""
         p = self.root
         while p:
             if p.data < val:
