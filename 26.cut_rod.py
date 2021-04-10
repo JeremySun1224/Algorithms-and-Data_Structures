@@ -55,5 +55,11 @@ def c2(p, n):
 
 if __name__ == '__main__':
     price = [0, 1, 5, 8, 9, 10, 17, 17, 20, 21, 23, 24, 26, 27, 27, 28, 30, 33, 36, 39, 40]
-    print(c1(p=price, n=16))
-    print(c2(p=price, n=16))
+    print(f'最大收益为：{c1(p=price, n=16)}')
+    print(f'最大收益为：{c2(p=price, n=16)}')
+    """
+    c1 running time: 5.198111295700073
+    最大收益为：44
+    c2 running time: 0.0249330997467041
+    最大收益为：44
+    """
