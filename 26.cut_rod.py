@@ -2,7 +2,7 @@
 # -*- author: JeremySun -*-
 # -*- dating: 21/4/10 -*-
 
-"""递归解钢条切割问题"""
+"""递归解钢条切割问题，自顶向下的解法"""
 
 from time import time
 
