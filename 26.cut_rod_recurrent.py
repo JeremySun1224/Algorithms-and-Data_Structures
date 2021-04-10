@@ -18,9 +18,6 @@ def cal_time(func):
     return wrapper
 
 
-price = [0, 1, 5, 8, 9, 10, 17, 17, 20, 21, 23, 24, 26, 27, 27, 28, 30, 33, 36, 39, 40]
-
-
 def cut_rod_recurrent_1(p, n):
     """两边同时切割"""
     if n == 0:
