@@ -8,16 +8,9 @@ import random
 
 
 def merge(li, low, mid, high):
-    """
-    归并
-    :param li:
-    :param low:
-    :param mid:
-    :param high:
-    :return:
-    """
-    i = low
-    j = mid + 1
+    """归并"""
+    i = low  # 第一段的第一个元素
+    j = mid + 1  # 第二段的第一个元素
     li_tmp = []
     while i <= mid and j <= high:  # 只要左右两边都有数
         if li[i] < li[j]:
@@ -35,7 +28,6 @@ def merge(li, low, mid, high):
         j += 1
     # 把li_tmp的值写回li
     li[low: high + 1] = li_tmp  # 切片可以往回写
-
     return li
 
 
