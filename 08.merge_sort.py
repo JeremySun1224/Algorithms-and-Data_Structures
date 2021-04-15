@@ -32,13 +32,7 @@ def merge(li, low, mid, high):
 
 
 def merge_sort(li, low, high):
-    """
-    归并排序
-    :param li:
-    :param low:
-    :param high:
-    :return:
-    """
+    """归并排序"""
     if low < high:  # 至少有两个元素，递归
         mid = (low + high) // 2
         merge_sort(li=li, low=low, high=mid)
