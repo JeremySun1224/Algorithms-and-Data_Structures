@@ -1,5 +1,7 @@
 # 数据结构与算法
 
+![Algorithms-and-Data_Structures](https://raw.githubusercontent.com/JeremySun1224/IMG/main/Algorithms-and-Data_Structures.png)
+
 ## 排序
 
 ### 插入
@@ -124,7 +126,7 @@ https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zui-chan
 1. 排序后求LCS，时间O(n^2)，空间O(n)
 2. dp[i]存储A[:i]的LIS，每个i和前面的下标对比，时间O(n^2)，空间O(n)
 for j in [i-1, 0]:
-  if A[j]<A[i]:
+    if A[j]<A[i]:
     dp[i] = max(dp[i], dp[j]+1)
 3. dp[i]存储LIS为i+1时最大的值，最后len(dp)即为答案，时间O(nlogn)，空间O(n)
 二分法查找插入dp的位置
